@@ -133,7 +133,7 @@
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 3;
-            this.closeButton.Text = "Close ";
+            this.closeButton.Text = "Tutup";
             this.closeButton.UseVisualStyleBackColor = true;
             // 
             // openFileDialog1
