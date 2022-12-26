@@ -73,3 +73,4 @@ E:\PemrogramanLanjut\Praktikum8\obj\Debug\Praktikum8.csproj.CoreCompileInputs.ca
 E:\PemrogramanLanjut\Praktikum8\obj\Debug\Praktikum8.csproj.CopyComplete
 E:\PemrogramanLanjut\Praktikum8\obj\Debug\Praktikum8.exe
 E:\PemrogramanLanjut\Praktikum8\obj\Debug\Praktikum8.pdb
+E:\PemrogramanLanjut\Praktikum8\obj\Debug\Praktikum8.GenresForm.resources

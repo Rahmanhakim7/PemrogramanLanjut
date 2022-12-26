@@ -1,6 +1,7 @@
 namespace Praktikum8
 {
     using System;
+    using System.Data;
     using System.Data.Entity;
     using System.Linq;
     using MySql.Data.MySqlClient;
@@ -40,6 +41,44 @@ namespace Praktikum8
         {
             return connection;
         }
+
+        public DataTable getData(string query, MySqlParameter[] parameters)
+        {
+            MySqlCommand command = new MySqlCommand(query, getConnection());
+
+            if (parameters!= null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            DataTable table = new DataTable();  
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }  
+
+        public int setData(string query, MySqlParameter[] parameters)
+        {
+            MySqlCommand command = new MySqlCommand(query, getConnection());
+
+            if (parameters!= null) 
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            openConnection();
+
+            int commandState = command.ExecuteNonQuery();
+
+            closeConnection();
+
+            return commandState;
+        }
+
+
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
