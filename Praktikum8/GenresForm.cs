@@ -21,7 +21,9 @@ namespace Praktikum8
         GENRE genre = new GENRE();
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(txtId.Text);
             string name = txtName.Text; 
+
             if (name.Trim().Equals(""))
             {
                 MessageBox.Show("Enter the Genre Name",
@@ -31,7 +33,7 @@ namespace Praktikum8
             }
             else
             {
-                if (genre.addGenre(name))
+                if (genre.addGenre(id, name))
                 {
                     MessageBox.Show("New Genre Added Succesfully!",
                     "New Genre", 

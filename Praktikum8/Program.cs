@@ -16,7 +16,7 @@ namespace Praktikum8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GenresForm());
+            Application.Run(new Form1());
         }
     }
 }

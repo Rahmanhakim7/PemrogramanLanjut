@@ -43,7 +43,8 @@ namespace Praktikum8
 
             if ( table.Rows.Count > 0 )
             {
-                MessageBox.Show("Login berhasil!!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GenresForm genres = new GenresForm();   
+                genres.ShowDialog();    
             }
             else
             {
@@ -60,6 +61,11 @@ namespace Praktikum8
                     MessageBox.Show("Wrong Username Or Password ", "Wrong Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

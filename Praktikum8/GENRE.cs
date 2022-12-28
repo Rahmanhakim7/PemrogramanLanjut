@@ -8,16 +8,19 @@ using MySql.Data.MySqlClient;
 
 namespace Praktikum8
 {
-    internal class GENRE
+   internal  class GENRE
     {
         MYDB db =  new MYDB();
-        public Boolean addGenre(string name)
+        public Boolean addGenre(int id, string name)
         {
-            string query = "INSERT INTO `genres`(`name`) VALUES (@genre_name)";
+            string query = "INSERT INTO genres VALUES (@id, @genre_name)";
 
-            MySqlParameter[] parameters = new MySqlParameter[1];
-            parameters[0] = new MySqlParameter("genre_name", MySqlDbType.VarChar);
-            parameters[0].Value = name; 
+            MySqlParameter[] parameters = new MySqlParameter[2];
+            parameters[0] = new MySqlParameter("@id", MySqlDbType.Int32);
+            parameters[0].Value = id;
+
+            parameters[1] = new MySqlParameter("@genre_name", MySqlDbType.VarChar);
+            parameters[1].Value = name;
 
             if (db.setData(query, parameters) == 1)
             {
@@ -37,7 +40,7 @@ namespace Praktikum8
             parameters[0] = new MySqlParameter("@genre_name", MySqlDbType.VarChar);
             parameters[0].Value = name;
 
-            parameters[1] = new MySqlParameter("id", MySqlDbType.Int32);
+            parameters[1] = new MySqlParameter("@id", MySqlDbType.Int32);
             parameters[1].Value = id;
             
             if (db.setData(query, parameters) == 1 )
